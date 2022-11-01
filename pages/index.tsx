@@ -1,6 +1,6 @@
 import localFont from "@next/font/local";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 // Font files can be colocated inside of `app`
 const monument = localFont({
@@ -33,32 +33,38 @@ export default function Home() {
 
 const Background = () => {
   const [loaded, setLoaded] = useState(false);
+  const videoRef = useCallback((ref: HTMLVideoElement) => {
+    const handler = async () => {
+      try {
+        await ref.play();
+        setLoaded(true);
+      } catch (err) {
+        setLoaded(false);
+      }
+    };
+    handler();
+  }, []);
+
   return (
     <div className="absolute h-full w-full">
       <Image
         className={`object-cover h-full sm:hidden absolute top-0 ${
-          loaded ? "invisible" : "visible"
+          loaded ? "hidden" : "sm:visible "
         }`}
         src="/backgrounds/background-preview.png"
         width={400}
         height={400}
         alt="background"
       />
-      <Image
-        className={`object-cover h-full sm:hidden absolute top-0 ${
-          loaded ? "visible" : "invisible"
-        }`}
-        src="/backgrounds/background.gif"
-        onLoad={() => setLoaded(true)}
-        width={400}
-        height={400}
-        alt="background"
-      />
       <video
-        className="object-cover h-full w-full hidden sm:block"
+        ref={videoRef}
+        className={`object-cover h-full w-full ${
+          loaded ? "visible" : "invisible sm:visible"
+        }`}
         autoPlay
         loop
         muted
+        playsInline
         controls={false}
       >
         <source src="/backgrounds/background.mov" />
