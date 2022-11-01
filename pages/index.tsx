@@ -1,5 +1,6 @@
 import localFont from "@next/font/local";
 import Image from "next/image";
+import { useEffect } from "react";
 
 // Font files can be colocated inside of `app`
 const monument = localFont({
@@ -11,6 +12,10 @@ const montreal = localFont({
 });
 
 export default function Home() {
+  useEffect(() => {
+    document.body.style.backgroundColor = "black";
+  }, []);
+
   return (
     <div className="bg-black">
       <div className="relative h-[80vh] sm:h-[95vh]">
@@ -29,14 +34,21 @@ export default function Home() {
 const Background = () => {
   return (
     <div className="absolute h-full w-full">
+      <Image
+        className="object-cover h-full"
+        src="/backgrounds/background.gif"
+        width={400}
+        height={400}
+        alt="background"
+      />
       <video
-        className="object-cover h-full w-full"
+        className="object-cover h-full w-full hidden sm:block"
         autoPlay
         loop
         muted
         controls={false}
       >
-        <source src="/background.mov" />
+        <source src="/backgrounds/background.mov" />
       </video>
     </div>
   );
