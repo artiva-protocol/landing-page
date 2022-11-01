@@ -1,6 +1,6 @@
 import localFont from "@next/font/local";
 import Image from "next/image";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 // Font files can be colocated inside of `app`
 const monument = localFont({
@@ -32,11 +32,24 @@ export default function Home() {
 }
 
 const Background = () => {
+  const [loaded, setLoaded] = useState(false);
   return (
     <div className="absolute h-full w-full">
       <Image
-        className="object-cover h-full sm:hidden"
+        className={`object-cover h-full sm:hidden absolute top-0 ${
+          loaded ? "invisible" : "visible"
+        }`}
+        src="/backgrounds/background-preview.png"
+        width={400}
+        height={400}
+        alt="background"
+      />
+      <Image
+        className={`object-cover h-full sm:hidden absolute top-0 ${
+          loaded ? "visible" : "invisible"
+        }`}
         src="/backgrounds/background.gif"
+        onLoad={() => setLoaded(true)}
         width={400}
         height={400}
         alt="background"
