@@ -183,8 +183,8 @@ const DAOSection = () => {
               Join the DAO
             </div>
             <div className="text-md sm:text-2xl text-white mt-6 px-8 sm:px-0">
-              Control the DAO treasury, vote for onchain proposals <br /> and
-              propagate the Artiva brand.
+              Control the DAO treasury, vote for onchain proposals{" "}
+              <br className="hidden sm:block" /> and propagate the Artiva brand.
             </div>
             <div className="mt-20 sm:mt-12 flex flex-col sm:flex-row px-8 sm:px-0">
               <a className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#FDA0E3] to-[#ad1db8]">
