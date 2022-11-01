@@ -67,7 +67,7 @@ const Background = () => {
         playsInline
         controls={false}
       >
-        <source src="/backgrounds/background.mov" />
+        <source src="https://d3ulrxylqa2nex.cloudfront.net/background.mov" />
       </video>
     </div>
   );
