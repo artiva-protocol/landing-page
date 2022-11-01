@@ -35,7 +35,7 @@ const Background = () => {
   return (
     <div className="absolute h-full w-full">
       <Image
-        className="object-cover h-full"
+        className="object-cover h-full sm:hidden"
         src="/backgrounds/background.gif"
         width={400}
         height={400}
