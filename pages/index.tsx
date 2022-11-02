@@ -1,6 +1,16 @@
 import localFont from "@next/font/local";
 import Image from "next/image";
 import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  DISCORD_URL,
+  DOCUMENTATION_URL,
+  TWITTER_URL,
+  DAO_URL,
+  APP_URL,
+  INFO_CENTER_URL,
+  DAO_DOCUMENTATION_URL,
+  GITHUB_URL,
+} from "../constants/urls";
 
 // Font files can be colocated inside of `app`
 const monument = localFont({
@@ -87,19 +97,44 @@ const Header = () => {
         </div>
       </div>
       <div className="z-20 items-center hidden sm:flex">
-        <a className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6">
+        <a
+          href={TWITTER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6"
+        >
           Twitter
         </a>
-        <a className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6">
+        <a
+          href={DISCORD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6"
+        >
           Discord
         </a>
-        <a className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6">
+        <a
+          href={DOCUMENTATION_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-md mr-1 rounded-md h-8 flex items-center opacity-70 px-6"
+        >
           Developers
         </a>
-        <a className="text-white text-md mr-2 rounded-md h-8 flex items-center opacity-70 px-6">
+        <a
+          href={DAO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-md mr-2 rounded-md h-8 flex items-center opacity-70 px-6"
+        >
           DAO
         </a>
-        <a className="text-white text-md border border-white rounded-md h-8 flex items-center px-8">
+        <a
+          href={APP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-md border border-white rounded-md h-8 flex items-center px-8"
+        >
           Launch App
         </a>
       </div>
@@ -154,10 +189,20 @@ const AppSection = () => {
               <br className="sm:hidden" /> you and your community.
             </div>
             <div className="mt-20 sm:mt-12 flex flex-col sm:flex-row px-8 sm:px-0">
-              <a className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#E7F1BC] to-[#1990B3]">
+              <a
+                href={APP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#E7F1BC] to-[#1990B3]"
+              >
                 Launch App
               </a>
-              <a className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300">
+              <a
+                href={INFO_CENTER_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300"
+              >
                 Learn More
               </a>
             </div>
@@ -187,10 +232,20 @@ const DAOSection = () => {
               <br className="hidden sm:block" /> and propagate the Artiva brand.
             </div>
             <div className="mt-20 sm:mt-12 flex flex-col sm:flex-row px-8 sm:px-0">
-              <a className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#FDA0E3] to-[#ad1db8]">
+              <a
+                href={DAO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#FDA0E3] to-[#ad1db8]"
+              >
                 View DAO
               </a>
-              <a className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300">
+              <a
+                href={DAO_DOCUMENTATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300"
+              >
                 Learn More
               </a>
             </div>
@@ -238,10 +293,20 @@ const DevSection = () => {
               onchain publishing modules.
             </div>
             <div className="mt-20 sm:mt-12 flex flex-col sm:flex-row px-8 sm:px-0">
-              <a className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#FD914C] to-[#b03e19]">
+              <a
+                href={DOCUMENTATION_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-black cursor-pointer text-xs md:text-md flex items-center justify-around font-bold rounded-md h-8 w-full sm:w-52 bg-gradient-to-r from-[#FD914C] to-[#b03e19]"
+              >
                 View Docs
               </a>
-              <a className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300">
+              <a
+                href={GITHUB_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 cursor-pointer text-xs md:text-md flex items-center justify-around mt-4 sm:mt-0 sm:ml-4 font-bold rounded-md h-8 w-full sm:w-52 border border-gray300"
+              >
                 View Github
               </a>
             </div>
@@ -256,19 +321,44 @@ const Footer = () => {
   return (
     <div className="bg-black border-t border-gray-700 sm:h-32 w-full sm:flex justify-around px-6 sm:px-0 py-4 sm:py-0">
       <div className="block sm:flex items-left sm:items-center">
-        <a className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12">
+        <a
+          href={TWITTER_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12"
+        >
           Twitter
         </a>
-        <a className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12">
+        <a
+          href={DISCORD_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12"
+        >
           Discord
         </a>
-        <a className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12">
+        <a
+          href={DOCUMENTATION_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12"
+        >
           Developers
         </a>
-        <a className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12">
+        <a
+          href={DAO_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12"
+        >
           DAO
         </a>
-        <a className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12">
+        <a
+          href={APP_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-white text-xs rounded-md h-8 flex items-center opacity-70 mt-2 sm:mt-0 sm:px-12"
+        >
           App
         </a>
       </div>
