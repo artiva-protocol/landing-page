@@ -185,8 +185,8 @@ const AppSection = () => {
               Explore the app
             </div>
             <div className="text-md sm:text-2xl text-white mt-6 px-8 sm:px-0">
-              Deploy, curate and customize an NFT platform for
-              <br className="sm:hidden" /> you and your community.
+              Deploy, curate and customize an NFT platform for you and your
+              community.
             </div>
             <div className="mt-20 sm:mt-12 flex flex-col sm:flex-row px-8 sm:px-0">
               <a
