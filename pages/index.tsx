@@ -153,7 +153,7 @@ const Hero = () => {
           montreal.className + " text-xl sm:text-2xl mt-6 text-white opacity-80"
         }
       >
-        Artiva V2 takes your collaborations,
+        Artiva V2 takes your NFT collaborations,
         <br className="sm:hidden" /> content and
         <br className="hidden sm:block" /> community onchain
       </div>
